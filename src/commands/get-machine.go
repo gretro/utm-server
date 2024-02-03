@@ -56,14 +56,15 @@ func (c *Commander) GetMachineByID(machineID string) (Machine, error) {
 }
 
 func (c *Commander) GetMachineIPAddresses(machineID string) ([]IPAddress, error) {
+	ips := make([]IPAddress, 0)
+
 	out, err := c.exec([]string{"ip-address", machineID})
 	if err != nil {
 		c.l.Debug("error getting IP addresses", "machine", machineID, system.ErrorLabel, err)
-		return nil, fmt.Errorf("error getting IP addresses: %w", err)
+		return ips, fmt.Errorf("error getting IP addresses: %w", err)
 	}
 
 	lines := strings.Split(out, "\n")
-	ips := make([]IPAddress, 0, len(lines))
 
 	for _, line := range lines {
 		addr := strings.TrimSpace(line)

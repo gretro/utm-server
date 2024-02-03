@@ -40,6 +40,14 @@ func main() {
 						Destination: &appConfig.UTMPath,
 					},
 					&cli.StringFlag{
+						Name:        "vm-path",
+						Usage:       "Path to the directory where VMs are stored",
+						Value:       "~/Library/Containers/com.utmapp.UTM/Data/Documents",
+						DefaultText: "~/Library/Containers/com.utmapp.UTM/Data/Documents",
+						Category:    "UTM",
+						Destination: &appConfig.VMPath,
+					},
+					&cli.StringFlag{
 						Name:        "host",
 						Usage:       "Host to bind to",
 						Value:       "127.0.0.1",
