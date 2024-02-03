@@ -15,3 +15,7 @@ func init() {
 func GetComponentLogger(component string) *slog.Logger {
 	return logger.With("component", component)
 }
+
+func SystemLogger() *slog.Logger {
+	return logger
+}

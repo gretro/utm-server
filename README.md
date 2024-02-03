@@ -17,21 +17,16 @@ This is useful when you need UTM to act as a IaaS test provider.
 * UTM 4.4.5+
 * Make
 
+
 ## Launching the server
-The server launches with sensitive defaults on port 8080. 
+The server launches with sensitive defaults on port 8788. 
 
 Depending on your architecture, launch the server on the host where UTM is located by running the appropriate executable.
 
   * arm64: `utm_server_arm64`
   * amd64: `utm_server_amd64`
 
-You can change the configuration via some environment variables.
-
-| Name        | Description                                                | Default                 |
-|-------------|------------------------------------------------------------|-------------------------|
-| `UTM_PATH`  | Specifies the path where to find  `UTM.app`                | `/Applications/UTM.app` |
-| `HTTP_HOST` | Specifies on which address the server listens for requests | `0.0.0.0`               |
-| `HTTP_PORT` | Specifies on which port the server listens for requests    | 8080                    |
+Use the `--help` command to get more information on the different options available for customization.
 
 ## Build project
 You can build the project for both arm4 and amd64 using the following make command:
