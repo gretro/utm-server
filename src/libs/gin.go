@@ -14,7 +14,7 @@ import (
 func BootstrapGin(appConfig *config.AppConfig) {
 	l := system.GetComponentLogger("webserver")
 
-	// gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.ReleaseMode)
 	engine := gin.New()
 
 	engine.Use(gin.Logger())
